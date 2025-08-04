@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpc7bs7lmlmpm"]
+
+[ext_resource type="Script" uid="uid://djpe3gcol8ue1" path="res://Player/player.gd" id="1_l8h54"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7dm0k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(16, 16)
+
+[sub_resource type="Curve" id="Curve_l8h54"]
+_data = [Vector2(0, 0), 0.0, 2.18805, 0, 0, Vector2(0.815259, 1), 0.696216, 0.696216, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_4ntmi"]
+offsets = PackedFloat32Array(0, 0.852713, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_l8h54")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_7dm0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Trail" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+width_curve = SubResource("Curve_l8h54")
+gradient = SubResource("Gradient_4ntmi")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2

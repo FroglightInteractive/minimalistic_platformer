@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1754345108
+icon.svg::CompressedTexture2D/CompressedTexture2D::5918033285327737717::1754339998::1754340001::1::::<><><>0<>0<>f6c30204fa8a9a3240af7381d53d04cd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.tscn::PackedScene::2445596938235785891::1754345095::0::1::::<><><>0<>0<><>::uid://dpc7bs7lmlmpm::::res://Player/player.tscn<>uid://cqk0e48a6nbcv::::res://icon.svg<>uid://dud0faqmdntvw::::res://Player/camera.gd
+::res://Player/::1754345095
+camera.gd::GDScript::8570758936157454660::1754342548::0::1::::<>Camera2D<><>0<>0<><>::
+player.gd::GDScript::7822220499214719850::1754344892::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::8218169186090656562::1754345095::0::1::::<><><>0<>0<><>::uid://djpe3gcol8ue1::::res://Player/player.gd
