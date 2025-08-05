@@ -6,9 +6,9 @@ extends CharacterBody2D
 # export movement variables
 @export var speed: float = 185.0	# the maximum speed of the player
 @export var acceleration: float = 15.0	# the acceleration of the player
-@export var jump_vel: float = 160.0	# how fast the player can jump (height)
-@export var down_grav: float = 750.0	# the amount of gravity that the player has when moving downwards (falling)
-@export var up_grav: float = 300.0	# the amount of gravity that the player has when moving upwards (jumping)
+@export var jump_vel: float = 200.0	# how fast the player can jump (height)
+@export var down_grav: float = 1200.0	# the amount of gravity that the player has when moving downwards (falling)
+@export var up_grav: float = 400.0	# the amount of gravity that the player has when moving upwards (jumping)
 @export var max_jumps: int = 2
 
 # export trail variables

@@ -13,14 +13,13 @@ _data = [Vector2(0, 0), 0.0, 2.18805, 0, 0, Vector2(0.815259, 1), 0.696216, 0.69
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_4ntmi"]
-offsets = PackedFloat32Array(0, 0.852713, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.557971, 0.852713, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_l8h54")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0, 0, 0, 1)
 mesh = SubResource("QuadMesh_7dm0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
