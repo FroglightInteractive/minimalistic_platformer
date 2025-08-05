@@ -51,13 +51,14 @@ func _physics_process(delta: float) -> void:
 		coyote_timer -= delta	# if we are not on the floor, take away delta from the coyote timer thus making the time that the player has left to jump smaller
 	
 	handle_movement(delta)
-	handle_trail()
 	
 	if launch_timer > 0.0:
 		velocity = launch_velocity
 		launch_timer -= delta
 	
 	move_and_slide()
+	
+	handle_trail()	# must be placed after move_and_slide() so that it doesn't lag one frame behind the player
 	was_on_floor = on_floor	# set was on floor to on floor after we calulate movement so that it reflects what happened *last frame*
 
 
