@@ -1,6 +1,8 @@
-res://Levels/level_1.tscn
-res://Resources/Tilesets/platform_tileset.tres
 res://main.tscn
+res://Resources/Tilesets/platform_tileset.tres
 res://Player/player.tscn
-res://Tiles/spin_saw_01.tscn
-res://Player/player.gd
+res://Levels/level_1.tscn
+res://Tiles/spike_01.tscn
+res://Tiles/launch_pad.tscn
+res://Tiles/finish_portal.tscn
+res://Tiles/death_box.tscn

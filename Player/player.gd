@@ -9,11 +9,10 @@ extends CharacterBody2D
 @export var jump_vel: float = 200.0	# how fast the player can jump (height)
 @export var down_grav: float = 1200.0	# the amount of gravity that the player has when moving downwards (falling)
 @export var up_grav: float = 400.0	# the amount of gravity that the player has when moving upwards (jumping)
-@export var max_jumps: int = 2
 
 # export trail variables
-@export var trail_max_points: int = 20
-@export var trail_point_spacing: float = 5
+@export var trail_max_points: int = 20	# the maximum amount of points there can be in the trail
+@export var trail_point_spacing: float = 5	# the amount of space between the points
 
 # coyote time variables
 var coyote_time: float = 0.1	# total amount of coyote time
@@ -21,13 +20,12 @@ var coyote_timer: float = 0.0	# current time left to jump using coyote time
 # jump buffer variables
 var jump_buffer_time: float = 0.1	# total amount of jump buffer time
 var jump_buffer_timer: float = 0.0	# current time left to use jump buffer
-# double jump variables
-var jumps_left: int = 2	# amount of jumps that the player can still make (double jumping)
-var was_on_floor: bool = false	# whether the player was on the floor in the last frame
 # trail variables
 var distance_accum: float = 0.0
-# movement input direction (-1 for left, 0 for nothing, 1 for right
-var move_dir: float = 0.0
+
+var move_dir: float = 0.0	# movement input direction (-1 for left, 0 for nothing, 1 for right
+var launch_velocity: Vector2 = Vector2.ZERO
+var launch_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -40,23 +38,18 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()
 	
-	if on_floor and not was_on_floor:	# landing, reset jumps
-		jumps_left = max_jumps
-	elif not on_floor and was_on_floor and velocity.y >= 0:	# walk off ledge, set jumps_left to 1 air jump if not jumping
-		jumps_left = max_jumps - 1
-	
-	was_on_floor = on_floor
-	
 	if on_floor:
 		coyote_timer = coyote_time	# reset coyote timer so that it can be used again
-		jumps_left = max_jumps	# reset jumps left to be used again
 	else:
 		handle_gravity(delta)
 		coyote_timer -= delta	# if we are not on the floor, take away delta from the coyote timer thus making the time that the player has left to jump smaller
 	
 	handle_movement(delta)
-	
 	handle_trail()
+	
+	if launch_timer > 0.0:
+		velocity = launch_velocity
+		launch_timer -= delta
 	
 	move_and_slide()
 
@@ -85,15 +78,12 @@ func handle_movement(delta: float) -> void:
 	if is_on_floor():	# on ground, always allow jump
 		can_jump = jump_buffer_timer > 0.0
 	elif coyote_timer > 0.0:	# within coyote time
-		can_jump = jump_buffer_timer > 0.0 and jumps_left == max_jumps
-	elif jumps_left > 0:	# use extra air jump(s)
 		can_jump = jump_buffer_timer > 0.0
 	
-	if can_jump and jumps_left > 0:	# make sure the player a: can jump and b: has jumps left to use
+	if can_jump:	# make sure the player a: can jump and b: has jumps left to use
 		velocity.y = -jump_vel	# set velocity to negative jump_velocity (upwards is negative)
 		jump_buffer_timer = 0.0	# set jump buffer timer to zero so that the player cannot jump again
 		coyote_timer = 0.0	# set coyote timer to zero so that the player cannot jump again
-		jumps_left -= 1	# remove one jump from jumps_left
 
 
 func handle_trail() -> void:
@@ -125,3 +115,8 @@ func reset_trail() -> void:
 
 func die() -> void:
 	get_tree().reload_current_scene()
+
+
+func launch(vel: Vector2) -> void:
+	launch_velocity = vel
+	launch_timer = 0.2	# seconds

@@ -26,6 +26,7 @@ mesh = SubResource("QuadMesh_7dm0k")
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Trail" type="Line2D" parent="."]
+modulate = Color(0.7, 0.7, 0.7, 1)
 top_level = true
 z_index = -1
 width_curve = SubResource("Curve_l8h54")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dccwyer6gablt"]
+
+[ext_resource type="Script" uid="uid://cnqd1w0y3o633" path="res://Tiles/death_box.gd" id="1_85ot1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcviq"]
+size = Vector2(16, 16)
+
+[node name="DeathBox" type="Area2D"]
+script = ExtResource("1_85ot1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qcviq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

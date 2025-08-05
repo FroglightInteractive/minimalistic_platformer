@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba3wvhwf42fcd"]
+[gd_scene load_steps=5 format=3 uid="uid://ba3wvhwf42fcd"]
 
 [ext_resource type="PackedScene" uid="uid://dpc7bs7lmlmpm" path="res://Player/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dud0faqmdntvw" path="res://Player/camera.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://wh3k7o4087r5" path="res://level_manager.gd" id="3_h2yge"]
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
+glow_strength = 0.82
+glow_bloom = 0.14
+glow_blend_mode = 1
+glow_hdr_threshold = 0.8
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +25,6 @@ target = NodePath("../Player")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("3_h2yge")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")

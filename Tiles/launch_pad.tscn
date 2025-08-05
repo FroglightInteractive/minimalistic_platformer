@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgdjwu1f85any"]
+
+[ext_resource type="Texture2D" uid="uid://wam67g4846wg" path="res://Assets/launch_pad_inner.png" id="1_5a31b"]
+[ext_resource type="Script" uid="uid://h4f88cj2kvux" path="res://Tiles/launch_pad.gd" id="1_x505f"]
+[ext_resource type="Texture2D" uid="uid://bbkkivh8ogqcr" path="res://Assets/launch_pad_arrow.png" id="2_x505f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5a31b"]
+radius = 7.07107
+
+[node name="LaunchPad" type="Area2D"]
+script = ExtResource("1_x505f")
+
+[node name="OuterSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_5a31b")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_x505f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5a31b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

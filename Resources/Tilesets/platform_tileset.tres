@@ -1,7 +1,9 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://m4ftlsdji7ya"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://m4ftlsdji7ya"]
 
 [ext_resource type="Texture2D" uid="uid://dehbbvwibyo3h" path="res://Assets/platform_tileset.png" id="1_gwrnh"]
 [ext_resource type="PackedScene" uid="uid://bg3wm6t72vlrm" path="res://Tiles/spin_saw_01.tscn" id="2_c3tf1"]
+[ext_resource type="PackedScene" uid="uid://bqif6u0iymtt5" path="res://Tiles/spike_01.tscn" id="3_6lmbl"]
+[ext_resource type="PackedScene" uid="uid://dccwyer6gablt" path="res://Tiles/death_box.tscn" id="4_rv8vi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("1_gwrnh")
@@ -121,6 +123,8 @@ texture = ExtResource("1_gwrnh")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6lmbl"]
 resource_name = "Tiles"
 scenes/1/scene = ExtResource("2_c3tf1")
+scenes/2/scene = ExtResource("3_6lmbl")
+scenes/3/scene = ExtResource("4_rv8vi")
 
 [resource]
 physics_layer_0/collision_layer = 1
