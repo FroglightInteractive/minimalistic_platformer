@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="4.2328172mm"
+   height="2.116667mm"
+   viewBox="0 0 4.2328172 2.116667"
+   version="1.1"
+   id="svg237"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="spike_new.svg"
+   inkscape:export-filename="spike_new.png"
+   inkscape:export-xdpi="384"
+   inkscape:export-ydpi="384"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview239"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="0"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="47.094051"
+     inkscape:cx="8.5679611"
+     inkscape:cy="5.0430998"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="0"
+     inkscape:window-y="42"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="path1076">
+    <inkscape:grid
+       type="xygrid"
+       id="grid410"
+       empspacing="4"
+       originx="-21.167184"
+       originy="-35.983334" />
+  </sodipodi:namedview>
+  <defs
+     id="defs234" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-21.167183,-35.983333)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:0.264583"
+       d="M 21.166666,38.1 23.283333,35.983333 25.4,38.1 Z"
+       id="path466" />
+    <g
+       id="path1076"
+       style="stroke-width:1.00013;stroke-dasharray:none">
+      <path
+         id="path1080"
+         style="color:#000000;fill:#fefefe;fill-opacity:1;stroke-width:1.00013;stroke-dasharray:none"
+         d="m 23.283333,35.983333 -2.11615,2.11615 L 21.1677,38.1 h 0.373104 L 23.283333,36.357471 25.025863,38.1 H 25.4 Z" />
+    </g>
+  </g>
+</svg>

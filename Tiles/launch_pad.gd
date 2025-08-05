@@ -23,7 +23,7 @@ func _ready() -> void:
 			direction_vec = Vector2(-1, 1).normalized()
 		7:
 			direction_vec = Vector2(1, 1).normalized()
-	$ArrowSprite.rotation = direction_vec.angle() + deg_to_rad(90)
+	$Sprite2D.rotation = direction_vec.angle() + deg_to_rad(90)
 
 
 func _on_body_entered(body: Node2D) -> void:

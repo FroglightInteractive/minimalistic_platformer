@@ -1,8 +1,9 @@
+GPUParticles2D
+Sprite2D
 WorldEnvironment
 CollisionShape2D
 Area2D
 ColorRect
-Sprite2D
 GraphFrame
 CollisionPolygon2D
 AnimatedSprite2D
@@ -12,4 +13,3 @@ Node
 Line2D
 MeshInstance2D
 StaticBody2D
-Camera2D
