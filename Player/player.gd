@@ -15,17 +15,19 @@ extends CharacterBody2D
 @export var trail_point_spacing: float = 5	# the amount of space between the points
 
 # coyote time variables
-var coyote_time: float = 0.1	# total amount of coyote time
+var coyote_time: float = 0.08	# total amount of coyote time
 var coyote_timer: float = 0.0	# current time left to jump using coyote time
 # jump buffer variables
 var jump_buffer_time: float = 0.1	# total amount of jump buffer time
 var jump_buffer_timer: float = 0.0	# current time left to use jump buffer
 # trail variables
 var distance_accum: float = 0.0
-
+# launch pad variables
 var move_dir: float = 0.0	# movement input direction (-1 for left, 0 for nothing, 1 for right
 var launch_velocity: Vector2 = Vector2.ZERO
 var launch_timer: float = 0.0
+
+var was_on_floor: bool = false	# whether the player was on floor in the last frame
 
 
 func _ready() -> void:
@@ -37,6 +39,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()
+	
+	var just_landed = (not was_on_floor) and on_floor	# check if we just landed
+	if just_landed:
+		$LandParticles1.restart()	# play landing particles
 	
 	if on_floor:
 		coyote_timer = coyote_time	# reset coyote timer so that it can be used again
@@ -52,6 +58,7 @@ func _physics_process(delta: float) -> void:
 		launch_timer -= delta
 	
 	move_and_slide()
+	was_on_floor = on_floor	# set was on floor to on floor after we calulate movement so that it reflects what happened *last frame*
 
 
 func handle_gravity(delta: float) -> void:
@@ -81,7 +88,7 @@ func handle_movement(delta: float) -> void:
 		can_jump = jump_buffer_timer > 0.0
 	
 	if can_jump:	# make sure the player a: can jump and b: has jumps left to use
-		$JumpParticles1.restart()
+		$JumpParticles1.restart()	# play the jump particles
 		#$JumpParticles1.emitting = true
 		velocity.y = -jump_vel	# set velocity to negative jump_velocity (upwards is negative)
 		jump_buffer_timer = 0.0	# set jump buffer timer to zero so that the player cannot jump again

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpc7bs7lmlmpm"]
+[gd_scene load_steps=12 format=3 uid="uid://dpc7bs7lmlmpm"]
 
 [ext_resource type="Script" uid="uid://djpe3gcol8ue1" path="res://Player/player.gd" id="1_l8h54"]
 
@@ -37,15 +37,30 @@ emission_sphere_radius = 4.0
 angle_min = -360.0
 angle_max = 360.0
 direction = Vector3(0, 1, 0)
-flatness = 1.0
+spread = 90.0
 initial_velocity_min = 5.0
 initial_velocity_max = 15.0
 gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
 scale_curve = SubResource("CurveTexture_k53q1")
 alpha_curve = SubResource("CurveTexture_btcbx")
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.09
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l8h54"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_k53q1")
+alpha_curve = SubResource("CurveTexture_btcbx")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_l8h54")
@@ -57,7 +72,6 @@ mesh = SubResource("QuadMesh_7dm0k")
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Trail" type="Line2D" parent="."]
-modulate = Color(0.7, 0.7, 0.7, 1)
 top_level = true
 z_index = -1
 width = 4.0
@@ -75,3 +89,11 @@ one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_fhl08")
+
+[node name="LandParticles1" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_l8h54")

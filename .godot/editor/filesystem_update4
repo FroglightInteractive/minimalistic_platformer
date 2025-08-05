@@ -6,5 +6,4 @@ res://Tiles/spike_01.tscn
 res://Tiles/launch_pad.tscn
 res://Tiles/finish_portal.tscn
 res://Tiles/death_box.tscn
-res://Tiles/launch_pad.gd
 res://Player/player.gd

@@ -7,7 +7,6 @@
 [node name="Level 1" type="Node2D"]
 
 [node name="bg" type="ColorRect" parent="."]
-self_modulate = Color(0.7, 0.7, 0.7, 1)
 z_index = -20
 offset_left = -790.0
 offset_top = -1791.0
