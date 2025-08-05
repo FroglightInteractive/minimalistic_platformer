@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://m4ftlsdji7ya"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://m4ftlsdji7ya"]
 
 [ext_resource type="Texture2D" uid="uid://dehbbvwibyo3h" path="res://Assets/platform_tileset.png" id="1_gwrnh"]
+[ext_resource type="PackedScene" uid="uid://bg3wm6t72vlrm" path="res://Tiles/spin_saw_01.tscn" id="2_c3tf1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("1_gwrnh")
@@ -117,9 +118,14 @@ texture = ExtResource("1_gwrnh")
 2:2/0/terrains_peering_bit/top_side = 0
 2:2/0/terrains_peering_bit/top_right_corner = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6lmbl"]
+resource_name = "Tiles"
+scenes/1/scene = ExtResource("2_c3tf1")
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Autotile"
 terrain_set_0/terrain_0/color = Color(1, 0, 0, 1)
 sources/0 = SubResource("TileSetAtlasSource_lquwl")
+sources/1 = SubResource("TileSetScenesCollectionSource_6lmbl")

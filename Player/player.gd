@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var trail_point_spacing: float = 5
 
 # coyote time variables
-var coyote_time: float = 0.08	# total amount of coyote time
+var coyote_time: float = 0.1	# total amount of coyote time
 var coyote_timer: float = 0.0	# current time left to jump using coyote time
 # jump buffer variables
 var jump_buffer_time: float = 0.1	# total amount of jump buffer time
@@ -121,3 +121,7 @@ func reset_trail() -> void:
 	if trail != null:	# make sure the trail node exists
 		trail.clear_points()	# clear all the points in the trail
 		distance_accum = 0.0	# reset the distance
+
+
+func die() -> void:
+	get_tree().reload_current_scene()

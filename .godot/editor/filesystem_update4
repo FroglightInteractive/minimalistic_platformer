@@ -2,3 +2,5 @@ res://Levels/level_1.tscn
 res://Resources/Tilesets/platform_tileset.tres
 res://main.tscn
 res://Player/player.tscn
+res://Tiles/spin_saw_01.tscn
+res://Player/player.gd
