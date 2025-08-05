@@ -84,7 +84,7 @@ end_cap_mode = 2
 [node name="JumpParticles1" type="GPUParticles2D" parent="."]
 position = Vector2(0, 4)
 emitting = false
-amount = 20
+amount = 15
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
@@ -92,7 +92,7 @@ process_material = SubResource("ParticleProcessMaterial_fhl08")
 
 [node name="LandParticles1" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 20
+amount = 10
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
