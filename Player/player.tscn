@@ -6,7 +6,7 @@
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(16, 16)
+size = Vector2(15.9, 15.9)
 
 [sub_resource type="Curve" id="Curve_l8h54"]
 _data = [Vector2(0, 0), 0.0, 2.18805, 0, 0, Vector2(0.815259, 1), 0.696216, 0.696216, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -23,7 +23,6 @@ script = ExtResource("1_l8h54")
 mesh = SubResource("QuadMesh_7dm0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Trail" type="Line2D" parent="."]
