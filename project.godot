@@ -15,6 +15,10 @@ run/main_scene="uid://ba3wvhwf42fcd"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=3
+
 [input]
 
 left={
@@ -39,6 +43,7 @@ jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 anti_aliasing/quality/msaa_2d=3
 environment/defaults/default_clear_color=Color(0.776621, 0.507318, 0.250564, 1)

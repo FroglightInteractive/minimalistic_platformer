@@ -1,28 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba3wvhwf42fcd"]
+[gd_scene load_steps=4 format=3 uid="uid://ba3wvhwf42fcd"]
 
 [ext_resource type="PackedScene" uid="uid://dpc7bs7lmlmpm" path="res://Player/player.tscn" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://cqk0e48a6nbcv" path="res://icon.svg" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://dud0faqmdntvw" path="res://Player/camera.gd" id="2_h2yge"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(360, 20)
+[ext_resource type="Script" uid="uid://wh3k7o4087r5" path="res://level_manager.gd" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-offset = Vector2(0, -48)
-zoom = Vector2(1.5, 1.5)
+offset = Vector2(0, -96)
+zoom = Vector2(2, 2)
 script = ExtResource("2_h2yge")
 target = NodePath("../Player")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 24)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(2.8125, 0.140625)
-texture = ExtResource("2_0xm2m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_h2yge")
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("3_h2yge")

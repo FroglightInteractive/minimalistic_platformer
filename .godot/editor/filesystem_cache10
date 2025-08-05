@@ -1,8 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754345108
+::res://::1754389453
 icon.svg::CompressedTexture2D/CompressedTexture2D::5918033285327737717::1754339998::1754340001::1::::<><><>0<>0<>f6c30204fa8a9a3240af7381d53d04cd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::2445596938235785891::1754345095::0::1::::<><><>0<>0<><>::uid://dpc7bs7lmlmpm::::res://Player/player.tscn<>uid://cqk0e48a6nbcv::::res://icon.svg<>uid://dud0faqmdntvw::::res://Player/camera.gd
-::res://Player/::1754345095
-camera.gd::GDScript::8570758936157454660::1754342548::0::1::::<>Camera2D<><>0<>0<><>::
-player.gd::GDScript::7822220499214719850::1754344892::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::8218169186090656562::1754345095::0::1::::<><><>0<>0<><>::uid://djpe3gcol8ue1::::res://Player/player.gd
+main.tscn::PackedScene::2445596938235785891::1754389436::0::1::::<><><>0<>0<><>::uid://dpc7bs7lmlmpm::::res://Player/player.tscn<>uid://dud0faqmdntvw::::res://Player/camera.gd<>uid://dehbbvwibyo3h::::res://Assets/platform_tileset.png
+::res://Assets/::1754388861
+platform_tileset.png::CompressedTexture2D/CompressedTexture2D::7454531710038352839::1754388861::1754388861::1::::<><><>0<>0<>67497a462430172383862363c0dc1441<>res://.godot/imported/platform_tileset.png-29e823694ace8aa1d09811babafdd32a.ctex::
+::res://Player/::1754389436
+camera.gd::GDScript::8570758936157454660::1754389436::0::1::::<>Camera2D<><>0<>0<><>::
+player.gd::GDScript/GDScript::7822220499214719850::1754387836::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::8218169186090656562::1754389436::0::1::::<><><>0<>0<><>::uid://djpe3gcol8ue1::::res://Player/player.gd
