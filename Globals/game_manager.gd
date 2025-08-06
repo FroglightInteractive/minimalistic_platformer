@@ -2,7 +2,7 @@ extends Node
 
 
 func win() -> void:
-	pass
+	next_level()
 
 
 func next_level() -> void:
@@ -10,13 +10,12 @@ func next_level() -> void:
 
 
 func retry() -> void:
-	get_tree().paused = false
-	get_tree().reload_current_scene()
+	get_tree().root.get_node("Main/LevelManager").retry()
 
 
 func die() -> void:
 	get_tree().root.get_node("Main/DeathMenu").show()
-	get_tree().paused = true
+	get_tree().root.get_node("Main/Player").paused = true
 
 
 func quit() -> void:

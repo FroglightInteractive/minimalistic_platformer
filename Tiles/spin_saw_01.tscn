@@ -1,39 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bg3wm6t72vlrm"]
+[gd_scene load_steps=4 format=3 uid="uid://bg3wm6t72vlrm"]
 
 [ext_resource type="Script" uid="uid://2ulucnyki1tn" path="res://Tiles/spin_saw_01.gd" id="1_bi33h"]
-[ext_resource type="Texture2D" uid="uid://c4rkim5q42e0n" path="res://Assets/spin_saw_01.png" id="1_rchke"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bi33h"]
-atlas = ExtResource("1_rchke")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d51jf"]
-atlas = ExtResource("1_rchke")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1vj24"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bi33h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d51jf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="Texture2D" uid="uid://v0x2runjpoul" path="res://Assets/spin_saw_new.png" id="2_bi33h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rchke"]
-radius = 7.07107
+radius = 6.0
 
 [node name="SpinSaw_01" type="Area2D"]
 script = ExtResource("1_bi33h")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_1vj24")
-autoplay = "default"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bi33h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rchke")

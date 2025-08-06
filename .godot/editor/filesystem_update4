@@ -12,3 +12,8 @@ res://Player/camera.gd
 res://level_manager.gd
 res://death_menu.gd
 res://Globals/game_manager.gd
+res://Levels/level_2.tscn
+res://Tiles/spin_saw_01.tscn
+res://Tiles/spin_saw_01.gd
+res://Levels/level_3.tscn
+res://Tiles/death_box.gd

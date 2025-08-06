@@ -29,6 +29,8 @@ var launch_timer: float = 0.0
 
 var was_on_floor: bool = false	# whether the player was on floor in the last frame
 
+var paused: bool = false
+
 
 func _ready() -> void:
 	if trail == null:
@@ -38,6 +40,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if paused:
+		return
+	
 	var on_floor = is_on_floor()
 	
 	var just_landed = (not was_on_floor) and on_floor	# check if we just landed
