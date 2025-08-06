@@ -80,7 +80,7 @@ func handle_movement(delta: float) -> void:
 		jump_buffer_timer = jump_buffer_time	# set jump buffer timer to jump buffer time so that we can see whether or not the player should jump when reaching the ground
 	else:
 		jump_buffer_timer -= delta	# if we have not just pressed the jump button, remove delta from jump buffer timer thus making the time that the player has to reach the ground in to jump once reaching it less
-	# performn jump if possible
+	# perform jump if possible
 	var can_jump = false
 	
 	if is_on_floor():	# on ground, always allow jump

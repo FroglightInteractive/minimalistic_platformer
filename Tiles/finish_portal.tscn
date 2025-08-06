@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy24j6w1nft1m"]
 
 [ext_resource type="Script" uid="uid://xpg1s6g0eqqh" path="res://Tiles/finish_portal.gd" id="1_bjjlw"]
-[ext_resource type="Texture2D" uid="uid://b0e3kmxj3hwpn" path="res://Assets/finish_portal.png" id="1_po62c"]
+[ext_resource type="Texture2D" uid="uid://dqv8bii10p3jg" path="res://Assets/finish_portal_new.png" id="2_bjjlw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjjlw"]
 radius = 7.07107
@@ -10,9 +10,11 @@ radius = 7.07107
 script = ExtResource("1_bjjlw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_po62c")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_bjjlw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_bjjlw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

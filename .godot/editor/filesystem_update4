@@ -9,3 +9,4 @@ res://Tiles/death_box.tscn
 res://Player/player.gd
 res://Tiles/launch_pad.gd
 res://Player/camera.gd
+res://level_manager.gd
