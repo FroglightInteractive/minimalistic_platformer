@@ -4,10 +4,11 @@ extends Node
 const LEVELS: Dictionary = {
 	"Level 1": preload("res://Levels/level_1.tscn"),
 	"Level 2": preload("res://Levels/level_2.tscn"),
-	"Level 3": preload("res://Levels/level_3.tscn")
+	"Level 3": preload("res://Levels/level_3.tscn"),
+	"Level 4": preload("res://Levels/level_4.tscn")
 }
 
-var current_level: int = 3
+var current_level: int = 4
 
 
 func _ready() -> void:
