@@ -1,3 +1,9 @@
+Button
+HBoxContainer
+Label
+VBoxContainer
+PanelContainer
+CanvasLayer
 GPUParticles2D
 Sprite2D
 WorldEnvironment
@@ -7,8 +13,3 @@ ColorRect
 GraphFrame
 CollisionPolygon2D
 AnimatedSprite2D
-TileMapLayer
-Node2D
-Node
-Line2D
-MeshInstance2D

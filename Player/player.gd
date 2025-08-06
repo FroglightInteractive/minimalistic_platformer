@@ -124,7 +124,7 @@ func reset_trail() -> void:
 
 
 func die() -> void:
-	get_tree().reload_current_scene()
+	GameManager.die()
 
 
 func launch(vel: Vector2) -> void:

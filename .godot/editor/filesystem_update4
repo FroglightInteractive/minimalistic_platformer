@@ -10,3 +10,5 @@ res://Player/player.gd
 res://Tiles/launch_pad.gd
 res://Player/camera.gd
 res://level_manager.gd
+res://death_menu.gd
+res://Globals/game_manager.gd

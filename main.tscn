@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba3wvhwf42fcd"]
+[gd_scene load_steps=14 format=3 uid="uid://ba3wvhwf42fcd"]
 
 [ext_resource type="PackedScene" uid="uid://dpc7bs7lmlmpm" path="res://Player/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dud0faqmdntvw" path="res://Player/camera.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://wh3k7o4087r5" path="res://level_manager.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://75h4l64srhb3" path="res://death_menu.gd" id="4_7mycd"]
+[ext_resource type="FontFile" uid="uid://dq2sritwe023s" path="res://Assets/Fonts/stormfaze.regular.otf" id="4_lquwl"]
+[ext_resource type="FontFile" uid="uid://c1765swv5ykyo" path="res://Assets/Fonts/tipo-metro-cdmx.regular.otf" id="5_7mycd"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 3
@@ -13,6 +16,59 @@ glow_strength = 0.82
 glow_bloom = 0.04
 glow_blend_mode = 1
 glow_hdr_threshold = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.72549, 0.839216, 1, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font = ExtResource("4_lquwl")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font = ExtResource("5_7mycd")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.447941, 0.677448, 0.999999, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.417933, 0.868156, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
+bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.72549, 0.839216, 1, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Main" type="Node2D"]
 
@@ -29,3 +85,83 @@ script = ExtResource("3_h2yge")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h2yge")
+
+[node name="DeathMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("4_7mycd")
+
+[node name="PanelContainer" type="PanelContainer" parent="DeathMenu"]
+custom_minimum_size = Vector2(250, 250)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mycd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathMenu/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DeathMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "YOU DIED!"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="DeathMenu/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+size_flags_vertical = 3
+text = "YOU WENT SOMEWHERE YOU WEREN'T SUPPOSED TO!"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DeathMenu/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Retry" type="Button" parent="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kek77")
+text = "RETRY"
+
+[node name="Quit" type="Button" parent="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kek77")
+text = "QUIT"
+
+[connection signal="pressed" from="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer/Retry" to="DeathMenu" method="_on_retry_pressed"]
+[connection signal="pressed" from="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer/Quit" to="DeathMenu" method="_on_quit_pressed"]
