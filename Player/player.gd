@@ -24,12 +24,12 @@ var jump_buffer_timer: float = 0.0	# current time left to use jump buffer
 var distance_accum: float = 0.0
 # launch pad variables
 var move_dir: float = 0.0	# movement input direction (-1 for left, 0 for nothing, 1 for right
-var launch_velocity: Vector2 = Vector2.ZERO
-var launch_timer: float = 0.0
+var launch_velocity: Vector2 = Vector2.ZERO	# velocity with which to launch the player
+var launch_timer: float = 0.0	# time left in the launch
 
 var was_on_floor: bool = false	# whether the player was on floor in the last frame
 
-var paused: bool = false
+var paused: bool = false	# whether the player should be paused
 
 
 func _ready() -> void:
@@ -52,14 +52,14 @@ func _physics_process(delta: float) -> void:
 	if on_floor:
 		coyote_timer = coyote_time	# reset coyote timer so that it can be used again
 	else:
-		handle_gravity(delta)
+		handle_gravity(delta)	# do the gravity thing if we are not on the floor
 		coyote_timer -= delta	# if we are not on the floor, take away delta from the coyote timer thus making the time that the player has left to jump smaller
 	
 	handle_movement(delta)
 	
-	if launch_timer > 0.0:
-		velocity = launch_velocity
-		launch_timer -= delta
+	if launch_timer > 0.0:	# check if launch_timer is not zero
+		velocity = launch_velocity	# set the player velocity to launch velocity
+		launch_timer -= delta	# subtract delta from launch_timer to make it run out and stop launching the player
 	
 	move_and_slide()
 	

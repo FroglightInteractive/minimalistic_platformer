@@ -18,12 +18,15 @@ func _ready() -> void:
 
 
 func next_level() -> void:
+	# remove old level
 	for child in get_children():
 		child.queue_free()
-	
+	# reset the player
 	$"../Player".global_position = Vector2.ZERO
 	$"../Player".velocity = Vector2.ZERO
-	
+	$"../Player".launch_timer = 0.0
+	$"../Player".launch_velocity = Vector2.ZERO
+	# spawn new level
 	var level_id: String = "Level " + str(current_level)
 	var level = LEVELS[level_id].instantiate()
 	add_child(level)
@@ -31,7 +34,10 @@ func next_level() -> void:
 
 
 func retry() -> void:
+	# hide death menu and reset the player
 	$"../DeathMenu".hide()
 	$"../Player".global_position = Vector2.ZERO
 	$"../Player".velocity = Vector2.ZERO
+	$"../Player".launch_timer = 0.0
+	$"../Player".launch_velocity = Vector2.ZERO
 	$"../Player".paused = false
