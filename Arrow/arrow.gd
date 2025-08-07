@@ -6,7 +6,7 @@ var velocity: Vector2 = Vector2.ZERO
 
 
 func _process(delta: float) -> void:
-	position += speed * velocity * delta
+	position += speed * velocity * delta	# move in the direction of velocity with speed
 
 
 func _on_body_entered(body: Node2D) -> void:
