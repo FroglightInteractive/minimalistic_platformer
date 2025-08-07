@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://rope8b7cbjn6"]
+
+[ext_resource type="Script" uid="uid://b4q825kpo5eui" path="res://Tiles/turret.gd" id="1_0634q"]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_0634q")
+
+[node name="FireTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
