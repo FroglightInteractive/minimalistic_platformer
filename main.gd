@@ -1,7 +1,9 @@
 extends Node2D
 
-var level_time: float = 0.0
-var is_timer_running: bool = false
+var level_time: float = 0.0	# the amount of time that the player has been in the current level (does not reset upon death)
+var is_timer_running: bool = false	# whether the speedrun timer should be running
+
+var level_deaths: int = 0	# amount of times the player has died in the current level
 
 
 func _process(delta: float) -> void:

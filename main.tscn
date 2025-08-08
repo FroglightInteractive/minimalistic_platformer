@@ -351,5 +351,6 @@ libraries = {
 
 [connection signal="pressed" from="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer/Retry" to="DeathMenu" method="_on_retry_pressed"]
 [connection signal="pressed" from="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer/Quit" to="DeathMenu" method="_on_quit_pressed"]
+[connection signal="visibility_changed" from="WinMenu" to="WinMenu" method="_on_visibility_changed"]
 [connection signal="pressed" from="WinMenu/PanelContainer/VBoxContainer/HBoxContainer/Retry" to="WinMenu" method="_on_retry_pressed"]
 [connection signal="pressed" from="WinMenu/PanelContainer/VBoxContainer/HBoxContainer/Next" to="WinMenu" method="_on_next_pressed"]
