@@ -24,3 +24,12 @@ res://Arrow/arrow.gd
 res://Tiles/turret.tscn
 res://Tiles/turret.gd
 res://Levels/level_6.tscn
+res://main_menu.tscn
+res://quit_game.gd
+res://options.gd
+res://start_game.gd
+res://MainMenu/main_menu.tscn
+res://MainMenu/start_game.gd
+res://MainMenu/options.gd
+res://MainMenu/quit_game.gd
+res://MainMenu/main_menu.gd

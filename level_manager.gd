@@ -2,6 +2,7 @@ extends Node
 
 # "level name": preload("level path")
 const LEVELS: Dictionary = {
+	"Level 0": preload("res://MainMenu/main_menu.tscn"),
 	"Level 1": preload("res://Levels/level_1.tscn"),
 	"Level 2": preload("res://Levels/level_2.tscn"),
 	"Level 3": preload("res://Levels/level_4.tscn"),
@@ -10,7 +11,7 @@ const LEVELS: Dictionary = {
 	"Level 6": preload("res://Levels/level_6.tscn"),
 }
 
-var current_level: int = 6
+var current_level: int = 0
 
 
 func _ready() -> void:
