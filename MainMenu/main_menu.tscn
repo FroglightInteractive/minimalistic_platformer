@@ -133,12 +133,12 @@ text = "Quit Game"
 label_settings = SubResource("LabelSettings_nlkkf")
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 offset_left = 73.0
 offset_top = -64.0
 offset_right = 295.0
 offset_bottom = -41.0
-text = "Minimalistic Platformer"
+text = "Fundamental"
 label_settings = SubResource("LabelSettings_jdgnk")
 horizontal_alignment = 1
 

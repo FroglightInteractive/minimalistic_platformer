@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var speedrun_timer: Label = $SpeedrunTimer
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	speedrun_timer.text = format_time(get_parent().level_time)
 
 
