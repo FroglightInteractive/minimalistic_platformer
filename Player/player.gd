@@ -95,7 +95,6 @@ func handle_movement(delta: float) -> void:
 	
 	if can_jump:	# make sure the player a: can jump and b: has jumps left to use
 		$JumpParticles1.restart()	# play the jump particles
-		#$JumpParticles1.emitting = true
 		velocity.y = -jump_vel	# set velocity to negative jump_velocity (upwards is negative)
 		jump_buffer_timer = 0.0	# set jump buffer timer to zero so that the player cannot jump again
 		coyote_timer = 0.0	# set coyote timer to zero so that the player cannot jump again
