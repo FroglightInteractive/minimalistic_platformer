@@ -1,8 +1,11 @@
 extends Node
 
+# saved as "level name": time
+var level_times: Dictionary[String, float] = {}
+
 
 func win() -> void:
-	next_level()
+	get_tree().root.get_node("Main/LevelManager").win_level()
 
 
 func next_level() -> void:

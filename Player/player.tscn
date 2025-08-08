@@ -1,10 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpc7bs7lmlmpm"]
+[gd_scene load_steps=12 format=3 uid="uid://dpc7bs7lmlmpm"]
 
 [ext_resource type="Script" uid="uid://djpe3gcol8ue1" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://b2hotaoe15tdl" path="res://Assets/player.png" id="2_4ntmi"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_7dm0k"]
-size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(7.9, 7.9)
@@ -70,11 +67,8 @@ script = ExtResource("1_l8h54")
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_4ntmi")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-visible = false
-mesh = SubResource("QuadMesh_7dm0k")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Trail" type="Line2D" parent="."]

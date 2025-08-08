@@ -1,11 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba3wvhwf42fcd"]
+[gd_scene load_steps=23 format=3 uid="uid://ba3wvhwf42fcd"]
 
 [ext_resource type="PackedScene" uid="uid://dpc7bs7lmlmpm" path="res://Player/player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bwwg5wswai5ii" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://dud0faqmdntvw" path="res://Player/camera.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://wh3k7o4087r5" path="res://level_manager.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://75h4l64srhb3" path="res://death_menu.gd" id="4_7mycd"]
 [ext_resource type="FontFile" uid="uid://dq2sritwe023s" path="res://Assets/Fonts/stormfaze.regular.otf" id="4_lquwl"]
 [ext_resource type="FontFile" uid="uid://c1765swv5ykyo" path="res://Assets/Fonts/tipo-metro-cdmx.regular.otf" id="5_7mycd"]
+[ext_resource type="Theme" uid="uid://c8qo3tnogkkn2" path="res://Resources/Themes/ui_theme_main.tres" id="7_272bh"]
+[ext_resource type="Script" uid="uid://co1yv53cuwny" path="res://ui.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://dicia5b8r2oyi" path="res://win_menu.gd" id="10_4c57u"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 3
@@ -40,27 +44,8 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("5_7mycd")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
-bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.447941, 0.677448, 0.999999, 1)
-corner_radius_top_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
-bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0.417933, 0.868156, 1)
-corner_radius_top_right = 20
-corner_radius_bottom_left = 20
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
+content_margin_left = 25.0
 bg_color = Color(0.760784, 0.909804, 0.905882, 0.788235)
 border_width_left = 5
 border_width_top = 5
@@ -70,7 +55,139 @@ border_color = Color(0.72549, 0.839216, 1, 1)
 corner_radius_top_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font = ExtResource("5_7mycd")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font = ExtResource("4_lquwl")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
+font = ExtResource("5_7mycd")
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = ExtResource("5_7mycd")
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+resource_name = "popup"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/DeathsLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer/VBoxContainer/HBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer/VBoxContainer/TimeLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer/VBoxContainer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/DeathsLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer/VBoxContainer/HBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer/VBoxContainer/TimeLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer/VBoxContainer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w48qg"]
+_data = {
+&"RESET": SubResource("Animation_ycdy4"),
+&"popup": SubResource("Animation_dg77c")
+}
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5vw27")
 
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
 
@@ -136,15 +253,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 focus_mode = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_7mycd")
+theme = ExtResource("7_272bh")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kek77")
 text = "RETRY"
 
 [node name="Quit" type="Button" parent="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer"]
@@ -152,16 +262,94 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 focus_mode = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_7mycd")
+theme = ExtResource("7_272bh")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kek77")
 text = "QUIT"
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("9_kek77")
+
+[node name="SpeedrunTimer" type="Label" parent="UI"]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 258.0
+offset_bottom = 55.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kek77")
+text = "00:00.00"
+label_settings = SubResource("LabelSettings_5vw27")
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="WinMenu" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("10_4c57u")
+
+[node name="PanelContainer" type="PanelContainer" parent="WinMenu"]
+custom_minimum_size = Vector2(344, 190)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_272bh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinMenu/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WinMenu/PanelContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Level Completed!"
+label_settings = SubResource("LabelSettings_kek77")
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="WinMenu/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Time: 00:00.00"
+label_settings = SubResource("LabelSettings_4c57u")
+
+[node name="DeathsLabel" type="Label" parent="WinMenu/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Deaths: 0"
+label_settings = SubResource("LabelSettings_efxa6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WinMenu/PanelContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Retry" type="Button" parent="WinMenu/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_constants/outline_size = 8
+text = "Retry Level"
+
+[node name="Next" type="Button" parent="WinMenu/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_constants/outline_size = 8
+text = "Next Level"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_w48qg")
+}
 
 [connection signal="pressed" from="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer/Retry" to="DeathMenu" method="_on_retry_pressed"]
 [connection signal="pressed" from="DeathMenu/PanelContainer/VBoxContainer/HBoxContainer/Quit" to="DeathMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="WinMenu/PanelContainer/VBoxContainer/HBoxContainer/Retry" to="WinMenu" method="_on_retry_pressed"]
+[connection signal="pressed" from="WinMenu/PanelContainer/VBoxContainer/HBoxContainer/Next" to="WinMenu" method="_on_next_pressed"]

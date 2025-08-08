@@ -33,3 +33,9 @@ res://MainMenu/start_game.gd
 res://MainMenu/options.gd
 res://MainMenu/quit_game.gd
 res://MainMenu/main_menu.gd
+res://MainMenu/options_menu.gd
+res://Resources/Themes/ui_theme_main.tres
+res://Globals/save_manager.gd
+res://main.gd
+res://ui.gd
+res://win_menu.gd
