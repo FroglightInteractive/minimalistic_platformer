@@ -57,6 +57,7 @@ func retry(reset_timer: bool = false, reset_deaths: bool = false) -> void:
 
 func win_level() -> void:
 	$"../Player".paused = true
+	$"../Player".win()
 	$"..".stop_timer()
 	$"../WinMenu".show()
 	$"../WinMenu/AnimationPlayer".play("popup")

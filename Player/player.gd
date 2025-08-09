@@ -47,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	
 	var just_landed = (not was_on_floor) and on_floor	# check if we just landed
 	if just_landed:
+		$LandSound.pitch_scale = randf_range(0.9, 1.1)
+		$LandSound.play()
 		$LandParticles1.restart()	# play landing particles
 	
 	if on_floor:
@@ -94,6 +96,8 @@ func handle_movement(delta: float) -> void:
 		can_jump = jump_buffer_timer > 0.0
 	
 	if can_jump:	# make sure the player a: can jump and b: has jumps left to use
+		$JumpSonud.pitch_scale = randf_range(0.9, 1.1)
+		$JumpSonud.play()
 		$JumpParticles1.restart()	# play the jump particles
 		velocity.y = -jump_vel	# set velocity to negative jump_velocity (upwards is negative)
 		jump_buffer_timer = 0.0	# set jump buffer timer to zero so that the player cannot jump again
@@ -128,9 +132,17 @@ func reset_trail() -> void:
 
 
 func die() -> void:
+	$DeathSound.pitch_scale = randf_range(0.9, 1.1)
+	$DeathSound.play()
 	GameManager.die()
 
 
+func win() -> void:
+	$WinSound.play()
+
+
 func launch(vel: Vector2) -> void:
+	$JumpSonud.pitch_scale = randf_range(1.0, 1.3)
+	$JumpSonud.play()
 	launch_velocity = vel
 	launch_timer = 0.2	# seconds

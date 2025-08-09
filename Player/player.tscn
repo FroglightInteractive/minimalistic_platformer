@@ -1,7 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpc7bs7lmlmpm"]
+[gd_scene load_steps=16 format=3 uid="uid://dpc7bs7lmlmpm"]
 
 [ext_resource type="Script" uid="uid://djpe3gcol8ue1" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://b2hotaoe15tdl" path="res://Assets/player.png" id="2_4ntmi"]
+[ext_resource type="AudioStream" uid="uid://cltxj680ugnfp" path="res://Assets/Sounds/landing_01.wav" id="3_btcbx"]
+[ext_resource type="AudioStream" uid="uid://gef5qhny26jb" path="res://Assets/Sounds/jump_01.wav" id="4_gwnis"]
+[ext_resource type="AudioStream" uid="uid://xvdvqk2w8jwl" path="res://Assets/Sounds/death_01.wav" id="5_k53q1"]
+[ext_resource type="AudioStream" uid="uid://bwamx4xo1f1kr" path="res://Assets/Sounds/win_01.wav" id="6_fhl08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(7.9, 7.9)
@@ -97,3 +101,17 @@ one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_l8h54")
+
+[node name="LandSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_btcbx")
+volume_db = -20.0
+
+[node name="JumpSonud" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gwnis")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_k53q1")
+volume_db = -10.0
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_fhl08")
