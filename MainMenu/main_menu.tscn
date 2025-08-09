@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://b6sgy05i8bs3d"]
+[gd_scene load_steps=17 format=4 uid="uid://b6sgy05i8bs3d"]
 
 [ext_resource type="TileSet" uid="uid://m4ftlsdji7ya" path="res://Resources/Tilesets/platform_tileset.tres" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://cf46pxeff5pr4" path="res://MainMenu/main_menu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://dqv8bii10p3jg" path="res://Assets/finish_portal_new.png" id="2_fu7sn"]
 [ext_resource type="FontFile" uid="uid://dq2sritwe023s" path="res://Assets/Fonts/stormfaze.regular.otf" id="3_jix8l"]
 [ext_resource type="Script" uid="uid://t5ojwkjtbw3l" path="res://MainMenu/start_game.gd" id="3_qe12f"]
-[ext_resource type="Script" uid="uid://bcag5gfg1jfsl" path="res://MainMenu/options.gd" id="5_8qtwp"]
 [ext_resource type="Script" uid="uid://buorcahpvvbxj" path="res://MainMenu/quit_game.gd" id="6_dy7ct"]
 [ext_resource type="Script" uid="uid://hnyf7p8bphu6" path="res://MainMenu/options_menu.gd" id="8_83n0s"]
 [ext_resource type="FontFile" uid="uid://c1765swv5ykyo" path="res://Assets/Fonts/tipo-metro-cdmx.regular.otf" id="8_r0x8f"]
@@ -81,17 +80,6 @@ texture = ExtResource("2_fu7sn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartGame"]
 shape = SubResource("CircleShape2D_glbon")
 
-[node name="Options" type="Area2D" parent="."]
-position = Vector2(184, -8)
-script = ExtResource("5_8qtwp")
-
-[node name="Sprite2D" type="Sprite2D" parent="Options"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_fu7sn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Options"]
-shape = SubResource("CircleShape2D_glbon")
-
 [node name="QuitGame" type="Area2D" parent="."]
 position = Vector2(296, -8)
 script = ExtResource("6_dy7ct")
@@ -110,16 +98,6 @@ offset_top = 7.0
 offset_right = 111.0
 offset_bottom = 30.0
 text = "Start Game"
-label_settings = SubResource("LabelSettings_nlkkf")
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-z_index = -19
-offset_left = 146.0
-offset_top = 7.0
-offset_right = 222.0
-offset_bottom = 30.0
-text = "Options"
 label_settings = SubResource("LabelSettings_nlkkf")
 horizontal_alignment = 1
 
@@ -304,7 +282,6 @@ theme_override_constants/outline_size = 8
 text = "Back"
 
 [connection signal="body_entered" from="StartGame" to="StartGame" method="_on_body_entered"]
-[connection signal="body_entered" from="Options" to="Options" method="_on_body_entered"]
 [connection signal="body_entered" from="QuitGame" to="QuitGame" method="_on_body_entered"]
 [connection signal="value_changed" from="OptionsMenu/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/Volume/VolumeSlider" to="OptionsMenu" method="_on_volume_slider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVolume/MusicVolumeSlider" to="OptionsMenu" method="_on_music_volume_slider_value_changed"]

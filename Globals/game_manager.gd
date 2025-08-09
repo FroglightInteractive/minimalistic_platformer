@@ -33,3 +33,8 @@ func die() -> void:
 func quit() -> void:
 	get_tree().paused = false
 	get_tree().quit()
+
+
+func back_to_menu() -> void:
+	get_tree().root.get_node("Main/LevelManager").back_to_menu()
+	player_is_dead = false
